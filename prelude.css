@@ -24,6 +24,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 input:focus, textarea:focus, button:focus {
   outline: none;
+  font-family: inherit;
 }
 
 textarea, input[type="text"], input[type="password"] {
@@ -37,15 +38,17 @@ textarea, input[type="text"], input[type="password"] {
   background-color: rgba( 240, 240, 240, 0.5 );
 
   font-size: 0.15in;
+
+  border: 1px solid black;
 }
 
-button, input[type="button"] {
+button, input[type="button"], input[type="submit"], input[type="file"], input[type="photo"] {
   background-color: transparent;
   background-image: linear-gradient( 0deg, rgba( 190, 215, 195, 0.5 ), rgba( 200, 235, 255, 0.5 ) );
   border: 1px solid rgba( 120, 120, 125, 0.5 );
   border-radius: 4px;
 
-  font-size: 0.9em;
+  font-size: 11pt;
 
   color: inherit;
 
@@ -55,22 +58,20 @@ button, input[type="button"] {
   transition: box-shadow 100ms ease;
 }
 
-button:hover, input[type="button"]:hover {
-  box-shadow: 0 0 0.3in rgba( 127, 127, 127, 0.5 );
-  transform: translate( 0, -1px );
-}
-
-button:active, input[type="button"]:active {
+button:active, input[type="button"]:active, input[type="submit"]:active {
   background-color: rgba( 180, 235, 255, 0.5 );
   background-image: none;
-  box-shadow: 0 0 0.3in rgba( 180, 180, 180, 0.8 );
-  transform: translate( 0, 1px );
+  transform: translate( 0, 2px );
 }
 
 ol, ul {
   list-style-type: none;
-  padding: 0;
+  padding: 0.1in;
   margin: 0;
+}
+
+li {
+  padding: 0.1in;
 }
 
 li * {
@@ -92,11 +93,10 @@ a {
 
 a:hover {
   text-decoration: underline;
-  transform: translate( 0, -2px );
 }
 
 a:active {
-  transform: translate( 0, 0 );
+  transform: translate( 0, 2px );
 }
 
 input[type="checkbox"], input[type="radio"] {
