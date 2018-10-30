@@ -22,6 +22,7 @@ html, body {
   height: 100%;
 
   font-family: montserrat;
+  font-size: 12pt;
 }
 
 div, section, img {
@@ -41,6 +42,30 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0.1in 0;
 }
 
+h1 {
+  font-size: 1.75em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1.45em;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+h5 {
+  font-size: 1.15em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
 textarea:disabled, input:disabled, button:disabled, select:disabled {
   background-color: rgba(93, 93, 93, 0.3);
   color: rgba(41, 61, 56, 0.7);
@@ -56,6 +81,7 @@ input:disabled + label {
 
 input, textarea, button, select {
   font-family: inherit;
+  font-size: inherit;
 }
 
 textarea:focus, input:focus, button:focus, select:focus {
@@ -112,6 +138,11 @@ button, input[type="button"], input[type="submit"], input[type="file"], input[ty
   width: auto;
 }
 
+input[type="color"] {
+  height: 39px;
+  padding: 5px;
+}
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -121,7 +152,7 @@ select {
 button:active, input[type="button"]:active, input[type="submit"]:active {
   background-color: rgba( 180, 235, 255, 0.5 );
   background-image: none;
-  transform: translate( 0, 2px );
+  transform: translate( 0, 1px );
 }
 
 ol, ul {
