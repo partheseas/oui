@@ -28,6 +28,9 @@ div, section, img {
   display: block;
 
   margin: 0;
+}
+
+section {
   padding: 0.3in 0.4in;
 }
 
@@ -38,24 +41,37 @@ h1, h2, h3, h4, h5, h6, p {
   padding: 0.1in 0;
 }
 
+textarea:disabled, input:disabled, button:disabled, select:disabled {
+  background-color: rgba(93, 93, 93, 0.3);
+  color: rgba(41, 61, 56, 0.7);
+}
+
+input[type="checkbox"]:disabled, input[type="radio"]:disabled, input[type="checkbox"]:checked:disabled, input[type="radio"]:checked:disabled {
+  filter: contrast( 50% );
+}
+
+input:disabled + label {
+  color: rgba(60, 83, 77, 0.7);
+}
+
 input, textarea, button, select {
   font-family: inherit;
 }
 
-input:focus, textarea:focus, button:focus, select:focus {
+textarea:focus, input:focus, button:focus, select:focus {
   outline: none;
 }
 
 textarea {
   display: block;
+  resize: vertical;
 }
 
-input[type="text"], input[type="password"] {
+input {
   display: inline-block;
 }
 
-textarea, input[type="text"], input[type="password"] {
-
+textarea, input {
   background-color: rgba( 240, 240, 240, 0.5 );
   border: 1px solid rgba( 120, 120, 125, 0.5 );
   border-radius: 4px;
@@ -70,8 +86,8 @@ textarea, input[type="text"], input[type="password"] {
   width: 100%;
 }
 
-textarea:focus, input[type="text"]:focus, input[type="password"]:focus {
-  border: 2px solid rgba(0, 148, 255, 0.7);
+textarea:focus, input:focus {
+  border: 2px solid #0094ff;
 }
 
 button, input[type="button"], input[type="submit"], input[type="file"], input[type="photo"], select {
@@ -92,6 +108,8 @@ button, input[type="button"], input[type="submit"], input[type="file"], input[ty
   transition: box-shadow 100ms ease;
 
   cursor: pointer;
+
+  width: auto;
 }
 
 select {
@@ -123,7 +141,8 @@ li * {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: #0054a2;
+  font-weight: 500;
 }
 
 a:hover {
@@ -146,10 +165,11 @@ input[type="checkbox"], input[type="radio"] {
   padding: 0;
 
   height: 30px;
+  width: auto;
 }
 
 input[type="checkbox"] {
-  padding-right: 39px;
+  padding-right: 29px;
 
   transition: padding 200ms, background-color 200ms;
 }
@@ -158,7 +178,7 @@ input[type="checkbox"]:checked {
   /* background-color: rgba(89, 227, 61, 0.7); */
   background-color: rgba(0, 148, 255, 0.7);
 
-  padding-left: 39px;
+  padding-left: 29px;
   padding-right: 0;
 
   filter: contrast( 150% );
@@ -190,9 +210,6 @@ input[type="radio"]::after {
   padding: 7px;
 }
 
-input[type="radio"]:checked::after {
-}
-
-label {
+input + label {
   margin: 0.1in;
 }
