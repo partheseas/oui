@@ -13,7 +13,8 @@ edge by default.
 - If you want a container element *with* padding, use `<section>`
 - If you want a container element *without* padding, use `<div>`
 - Oui frequently tries to use tasteful transparency so that things such as buttons
-always match the color of your app. If I have failed and it looks terrible under
+and text input always match the context they're in. If I have failed and it
+looks utterly terrible under reasonable circumstances, please tell me!
 - I have tried to make customization easy by naming the variables verbosely and
 grouping them together at the top.
 
@@ -23,5 +24,5 @@ grouping them together at the top.
 ```
 
 ### Installation
-Just download a compiled CSS file from the dist directory. A source map is included
-if you would like, or you can use the minified version.
+Just download a compiled CSS file from the dist directory, or download the .sass
+source, customize it, and build it yourself.
