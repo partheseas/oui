@@ -1,10 +1,31 @@
+// Checked checkboxes, radioed radios, and the border around text inputs
 $input-selected-color: #0094ffb4 // Blue
 // $input-selected-color: #ff6b00b4 // Orange
+
+// The border around text inputs, buttons, etc. when not focused.
 $input-border-color: #78787d7f
+
+// Colors for inputs that have been disabled
 $input-disabled-background-color: #5d5d5d4b
 $input-disabled-color: #344742b4
+
+// Background color for text inputs
 $input-text-background-color: #f0f0f07f
+
+// Background color for non-selected checkboxes and radios
+$input-toggle-background-color: #bababa7f
+
+// Color of the 'nub' for non-selected checkboxes and radios
+$input-toggle-color: #f6f6f6
+
+// Background gradient for unactive buttons, and a solid color to give
+// clicked buttons a 'pressed' look
 $button-background-gradient: linear-gradient( 0deg, #dee2ee7f, #ffffff7f )
+$button-background-clicked: #c0e6f47f
+
+// Color for link elements
+// Can be set to 'inherit' for links to blend in with other text
+$link-color: #0054a2
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Roboto+Mono:300,300i,400,400i,500,500i,700,700i|Roboto+Slab:100,300,400,700')
 
@@ -123,7 +144,7 @@ button, input[type="button"], input[type="submit"], input[type="file"], input[ty
   cursor: pointer
 
 button:active, input[type="button"]:active, input[type="submit"]:active
-  background-color: #b4ebff7f
+  background-color: $button-background-clicked
   background-image: none
   transform: translate( 0, 1px )
 
@@ -150,7 +171,7 @@ li
 
 a
   text-decoration: none
-  color: #0054a2
+  color: $link-color
   font-weight: 500
   &:hover
     text-decoration: underline
@@ -161,7 +182,7 @@ input[type="checkbox"], input[type="radio"]
   -webkit-appearance: initial
   vertical-align: middle
 
-  background-color: #bababa7f
+  background-color: $input-toggle-background-color
   border: 1px solid $input-border-color
   border-radius: 15px
 
@@ -188,7 +209,7 @@ input[type="checkbox"]
 
     display: inline-block
 
-    background-color: #f6f6f6
+    background-color: $input-toggle-color
     border-radius: 14px
     padding: 14px
 
@@ -203,7 +224,7 @@ input[type="radio"]
 
     display: inline-block
 
-    border: 7px solid #f6f6f6
+    border: 7px solid $input-toggle-color
     border-radius: 40px
     padding: 7px
 
