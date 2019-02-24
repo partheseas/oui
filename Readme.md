@@ -18,6 +18,12 @@ looks utterly terrible under reasonable circumstances, please tell me!
 - I have tried to make customization easy by naming the variables verbosely and
 grouping them together at the top.
 
+## build
+```shell
+sass src/oui.sass:dist/oui.css
+sass src/oui.sass:dist/oui.min.css --style compressed --no-source-map
+```
+
 ### Usage
 ```html
 <link rel="stylesheet" type="text/css" href="oui.min.css" />
