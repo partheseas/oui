@@ -1,5 +1,5 @@
 # Oui
-![Oui v0.1.0](https://img.shields.io/badge/oui-v0.1.0-df4465.svg)
+![Oui v0.1.0](https://img.shields.io/badge/oui-v0.1.0-e05674.svg)
 
 ## Overview
 Oui is a starting-place stylesheet for beginning a new project, whether it's the
@@ -18,10 +18,10 @@ looks utterly terrible under reasonable circumstances, please tell me!
 - I have tried to make customization easy by naming the variables verbosely and
 grouping them together at the top.
 
-## build
+## Build
 ```shell
-sass src/oui.sass:dist/oui.css
-sass src/oui.sass:dist/oui.min.css --style compressed --no-source-map
+sass style/oui.sass:dist/oui.css
+sass style/oui.sass:dist/oui.min.css --style compressed --no-source-map
 ```
 
 ### Usage
@@ -30,5 +30,5 @@ sass src/oui.sass:dist/oui.min.css --style compressed --no-source-map
 ```
 
 ### Installation
-Just download a compiled CSS file from the dist directory, or download the .sass
-source, customize it, and build it yourself.
+Just download the files from the dist directory and use them directly, or
+download the source, customize it, and build it yourself.

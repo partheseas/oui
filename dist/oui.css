@@ -51,6 +51,13 @@ h6 {
   font-size: 1em;
 }
 
+blockquote {
+  background-color: #9190a37f;
+  border-left: 0.7em solid #5e5c827f;
+  padding: 2em;
+  margin: 0;
+}
+
 textarea:disabled, input:disabled, button:disabled, select:disabled {
   background-color: #5d5d5d4b;
   color: #344742b4;
