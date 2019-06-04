@@ -32,6 +32,7 @@ $link-color: #0054a2
 // Custom fonts that I love <3
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Roboto+Mono:300,300i,400,400i,500,500i,700,700i|Roboto+Slab:100,300,400,700')
 
+
 *
   box-sizing: border-box
 
@@ -42,8 +43,9 @@ html, body
   width: 100%
   height: 100%
 
-  font-family: montserrat
+  font-family: "Montserrat"
   font-size: 12pt
+  line-height: 1.5
 
 div, section, img
   display: block
@@ -53,11 +55,11 @@ div, section, img
 section
   padding: 0.3in 0.4in
 
-h1, h2, h3, h4, h5, h6, p
+h1, h2, h3, h4, h5, h6
   display: block
 
   margin: 0
-  padding: 0.1in 0
+  padding: 0.5em 0 0.1em 0
 
 h1
   font-size: 1.75em
@@ -77,15 +79,45 @@ h5
 h6
   font-size: 1em
 
+p
+  display: block
+
+  margin: 0
+  padding: 0.2em 0 0.5em 0
+
 blockquote
-  background-color: #9190a37f
-  border-left: 0.7em solid #5e5c827f
+  background-color: #9190a33f
+  border-left: 0.7em solid #5e5c823f
+  border-radius: 4px
   padding: 2em
   margin: 0
 
 textarea:disabled, input:disabled, button:disabled, select:disabled
   background-color: $input-disabled-background-color
   color: $input-disabled-color
+
+pre
+  padding: 2em
+  overflow: auto
+  border-left: 0.7em solid #5e5c823f
+  border-radius: 4px
+  // color: #d5d6f5
+  // color: #ffffff
+  // background-color: #242332cf
+  background-color: #9190a33f
+  font-family: "Roboto Mono"
+  font-weight: 300
+  // font-size: 1.4em
+
+code
+  padding: 0.01in 0.05in
+  border-radius: 4px
+  // color: #d5d6f5
+  // color: #ffffff
+  // background-color: #242332cf
+  background-color: #9190a33f
+  font-family: "Roboto Mono"
+  font-weight: 300
 
 input[type="checkbox"]:disabled, input[type="radio"]:disabled
   filter: contrast( 50% )
