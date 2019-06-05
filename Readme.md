@@ -1,13 +1,11 @@
-# Oui
-![Oui v0.1.0](https://img.shields.io/badge/oui-v0.1.0-e05674.svg)
+# *Oui!*
+![package version](https://img.shields.io/badge/oui-v0.2.0-fb976c.svg)
+![stability](https://img.shields.io/badge/stability-beta-6680f2.svg)
 
-## Overview
-Oui is a starting-place stylesheet for beginning a new project, whether it's the
-humble beginnings of a large scale application or just a simple demo/proof-of-concept.
+Oui is a starting-place stylesheet that applies sensable defaults so that
+you can focus on functionality instead of aesthetics. It makes a few assumptions
+about the structure of your document, but nothing drastic.
 
-There are a couple important things to note:
-
-- In `<form>`s your label should always come after the input
 - `<body>` does not have any margin or padding, so that content can go edge to
 edge by default.
 - If you want a container element *with* padding, use `<section>`
@@ -26,9 +24,8 @@ sass style/oui.sass:dist/oui.min.css --style compressed --no-source-map
 
 ### Usage
 ```html
+<!--
+  Just include it in your page. No fancy classes to memorize and apply.
+-->
 <link rel="stylesheet" type="text/css" href="oui.min.css" />
 ```
-
-### Installation
-Just download the files from the dist directory and use them directly, or
-download the source, customize it, and build it yourself.
