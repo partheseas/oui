@@ -1,18 +1,19 @@
-// Copyright
+@import 'colors'
+@import 'fonts'
 
-// Checked checkboxes, radioed radios, and the border around text inputs
-$input-selected-color: #0094ffb4 // Blue
-// $input-selected-color: #ff6b00b4 // Orange
+// Block background and border colors (blockquote and pre)
+$block-background-color: #dbdaf226
+$block-border-color: #9e9cc31f
 
 // The border around text inputs, buttons, etc. when not focused.
-$input-border-color: #78787d7f
+$input-border-color: #595870b6
 
 // Colors for inputs that have been disabled
 $input-disabled-background-color: #5d5d5d4b
 $input-disabled-color: #344742b4
 
 // Background color for text inputs
-$input-text-background-color: #f0f0f07f
+$input-text-background-color: #dbdaf226
 
 // Background color for non-selected checkboxes and radios
 $input-toggle-background-color: #bababa7f
@@ -23,28 +24,37 @@ $input-toggle-color: #f6f6f6
 // Background gradient for unactive buttons, and a solid color to give
 // clicked buttons a 'pressed' look
 $button-background-gradient: linear-gradient( 0deg, #dee2ee7f, #ffffff7f )
-$button-background-clicked: #c0e6f47f
+$button-background-clicked: #e4e4e47f
 
-// Color for link elements
-// Can be set to 'inherit' for links to blend in with other text
-$link-color: #0054a2
+@import 'tables'
 
-// Custom fonts that I love <3
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Roboto+Mono:300,300i,400,400i,500,500i,700,700i|Roboto+Slab:100,300,400,700')
-
+// I would like this to be a variable again eventually, but the current implementation
+// of our color definitions makes it a little hard.
+$accent-color: hsl(204, 86%, 62%)
 
 *
   box-sizing: border-box
+
+:root
+  --accent-color: #{$accent-color}
+
+  --sans-serif: #{$sans-serif}
+  --serif: #{$serif}
+  --monospace: #{$monospace}
 
 html, body
   margin: 0
   padding: 0
 
-  width: 100%
-  min-height: 100%
+  width: 100vw
+  min-height: 100vh
 
-  font-family: "Montserrat"
-  font-size: 12pt
+  font:
+    family: $sans-serif
+    family: var( --sans-serif )
+    size: 12pt
+    weight: 300
+
   line-height: 1.5
 
 div, section, img
@@ -59,55 +69,67 @@ h1, h2, h3, h4, h5, h6
   display: block
 
   margin: 0
-  padding: 0.5em 0 0.1em 0
+  padding: 0.6rem 0 0.1rem 0
 
 h1
-  font-size: 1.75em
+  font-size: 2.5rem
 
 h2
-  font-size: 1.6em
+  font-size: 2.1rem
 
 h3
-  font-size: 1.45em
+  font-size: 1.8rem
 
 h4
-  font-size: 1.3em
+  font-size: 1.6rem
 
 h5
-  font-size: 1.15em
+  font-size: 1.4rem
 
 h6
-  font-size: 1em
+  font-size: 1.2rem
 
 p
   display: block
 
   margin: 0
-  padding: 0.2em 0 0.5em 0
+  padding: 0.3rem 0
 
 blockquote
-  background-color: #9190a33f
-  border-left: 0.7em solid #5e5c823f
-  border-radius: 4px
-  padding: 2em
-  margin: 0
+  border:
+    left: 0.3rem solid $block-border-color
+    radius: 4px
+  background:
+    color: $block-background-color
+  margin: 0.5rem 0
+  padding: 1rem 1.5rem
 
 textarea:disabled, input:disabled, button:disabled, select:disabled
-  background-color: $input-disabled-background-color
+  background:
+    color: $input-disabled-background-color
   color: $input-disabled-color
 
+pre, code
+  font:
+    size: 0.9em
+
 pre
-  padding: 2em
-  overflow: auto
-  border-left: 0.7em solid #5e5c823f
-  border-radius: 4px
+  border:
+    left: 0.3rem solid $block-border-color
+    radius: 4px
   // color: #d5d6f5
   // color: #ffffff
   // background-color: #242332cf
-  background-color: #9190a33f
-  font-family: "Roboto Mono"
-  font-weight: 300
-  // font-size: 1.4em
+  background:
+    color: $block-background-color
+  font:
+    family: $monospace
+    family: var( --monospace )
+    weight: 300
+  margin: 0.5rem 0
+  padding: 1rem 1.5rem
+  overflow: auto
+  // font-size: 1.4rem
 
 code
   padding: 0.01in 0.05in
@@ -115,9 +137,11 @@ code
   // color: #d5d6f5
   // color: #ffffff
   // background-color: #242332cf
-  background-color: #9190a33f
-  font-family: "Roboto Mono"
-  font-weight: 300
+  background-color: $block-background-color
+  font:
+    family: $monospace
+    family: var( --monospace )
+    weight: 300
 
 input[type="checkbox"]:disabled, input[type="radio"]:disabled
   filter: contrast( 50% )
@@ -128,8 +152,9 @@ input:disabled + label
   color: $input-disabled-color
 
 input, textarea, button, select
-  font-family: inherit
-  font-size: inherit
+  font:
+    family: inherit
+    size: inherit
   &:focus
     outline: none
 
@@ -142,19 +167,20 @@ input
 
 textarea, input
   background-color: $input-text-background-color
-  border: 1px solid
+  border: 1px solid $input-border-color
   border-radius: 4px
 
   color: inherit
 
-  font-size: 0.15in
+  font-size: 0.9rem
 
-  padding: 0.1in
-  margin: 0.1in 0
+  padding: 0.6rem
+  margin: 0.6rem 0
 
   width: 100%
   &:focus
-    border: 2px solid $input-selected-color
+    border: 1px solid $accent-color
+    border: 1px solid var(--accent-color)
 
 button, input[type="button"], input[type="submit"], input[type="file"], input[type="photo"], select
   display: inline-block
@@ -168,8 +194,8 @@ button, input[type="button"], input[type="submit"], input[type="file"], input[ty
 
   font-size: 0.15in
 
-  padding: 0.1in
-  margin: 0.1in 0.1in 0.1in 0
+  padding: 0.6rem
+  margin: 0.6rem 0.6rem 0.6rem 0
 
   transition: box-shadow 100ms ease
 
@@ -186,6 +212,9 @@ select
   -moz-appearance: none
   appearance: none
 
+  border-right-width: 1rem
+
+// This sucks my dude
 input[type="color"]
   height: 39px
   padding: 5px
@@ -204,7 +233,8 @@ li
 
 a
   text-decoration: none
-  color: $link-color
+  color: $accent-color
+  color: var(--accent-color)
   font-weight: 500
   &:hover
     text-decoration: underline
@@ -219,20 +249,21 @@ input[type="checkbox"], input[type="radio"]
   border: 1px solid $input-border-color
   border-radius: 15px
 
-  margin: 0.1in 0
+  margin: 0.6rem 0
   padding: 0
 
   height: 30px
   width: auto
 
 input[type="checkbox"]
-  padding-right: 29px
+  padding-right: 2rem
 
-  transition: padding 200ms, background-color 200ms
+  transition: padding 200ms, background-color 300ms
   &:checked
-    background-color: $input-selected-color
+    background-color: $accent-color
+    background-color: var(--accent-color)
 
-    padding-left: 29px
+    padding-left: 2rem
     padding-right: 0
 
     filter: contrast( 150% )
@@ -247,8 +278,11 @@ input[type="checkbox"]
     padding: 14px
 
 input[type="radio"]
+  transition: background-color 300ms
+
   &:checked
-    background-color: $input-selected-color
+    background-color: $accent-color
+    background-color: var(--accent-color)
 
     filter: contrast( 150% )
 
@@ -262,4 +296,4 @@ input[type="radio"]
     padding: 7px
 
 input + label
-  margin: 0.1in
+  margin: 0.6rem

@@ -10,11 +10,11 @@ let styles = [ 'background-color: #000000; color: white',
                'background-color: #e786d7' ]
 
 window.addEventListener( 'DOMContentLoaded', () => {
-  let source = document.querySelector( '#test-source' )
-  let fills = Array.from( document.querySelectorAll( '.test-fill' ) )
+  let source = document.querySelector( '.color-balance' )
 
-  styles.forEach( style => {
+  styles.forEach( ( style, colorClass ) => {
     let container = document.createElement( 'section' )
+    container.className = `color-balance`
     container.innerHTML = source.innerHTML
     container.style = style
     document.body.appendChild( container )
